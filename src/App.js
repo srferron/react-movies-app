@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import Title from './components/Title'
+import SearchForm from './components/SearchForm'
 import './App.css';
+//Hemos instalado bulma para los webcomponents  'npm install bulma'
+//Lo chulo es maquetar usando Flex Box https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+import 'bulma/css/bulma.css';
+//Importamos globales
+import * as GLOBAL from '../global/Constants';
+
+//Utilizamos un servicio gratuito http://www.omdbapi.com/apikey.aspx para obtener las peliculas
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title> Search for movies</Title>
+
+      <div className="columns is-mobile is-centered">
+        <div className="column is-half">
+          <div className="bd-notification is-primary">
+            <SearchForm inputTitle='Write a movie name' buttonTitle='Search' />
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
