@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import * as GLOBAL from '../global/Constants';
 
 class SearchForm extends Component {
 
@@ -22,7 +23,14 @@ class SearchForm extends Component {
     handleSubmit = e => {
         //Evita el envio del formulario (comportamiento por defecto)
         e.preventDefault();
-        alert(this.state.inputMovie);
+        fetch(`${GLOBAL.BASE_URI_OMDB}?apikey=${GLOBAL.API_KEY}&s=${this.state.inputMovie}`)
+            .then(res=>res.json())
+            .then(results =>{
+                //Desetruturación. Del resultado devuelto en esta promesa, obtiene el parametro Search y en caso de ser undefined, lo inicializa a []
+                const {Search=[]}=results
+                console.log(results);
+                this.props.onMoviesResults(Search);
+            } )
     }
 
     render(){
