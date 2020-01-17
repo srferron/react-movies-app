@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  padding-top: 30px;
+  text-align:center;
 }
 
 .App-logo {
@@ -11,6 +12,23 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.SearchForm-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.MoviesList {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px
+}
+
+.Movie-Item {
+  margin-bottom: 20px;
+  width: 300px;
 }
 
 .App-header {
