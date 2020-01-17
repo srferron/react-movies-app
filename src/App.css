@@ -22,12 +22,12 @@
 .MoviesList {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; 
   padding: 10px
 }
 
 .Movie-Item {
-  margin-bottom: 20px;
+  margin: 20px;
   width: 300px;
 }
 
